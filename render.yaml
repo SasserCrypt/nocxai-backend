@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: nocxai-backend
+    env: node
+    plan: free
+    region: frankfurt
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    autoDeploy: true
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: BASE_URL
+        sync: false
